@@ -14,10 +14,12 @@ exports.findAll = async(request, response) => {
     response.status(200).json({status: true, data: result});
 
     logger.info("INFO, Success in reading all users")
+    logger.warn("WARN, Success in reading all users")
+    logger.error("ERROR in logs")
   }catch (err) {
     console.log("Problem in reading users", err);
     
-    logger.info("ERROR, Error in reading all users")
+    logger.error("ERROR, Error in reading all users")
 
     response.status(200).json({status: false, data: err});
     
